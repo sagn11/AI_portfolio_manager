@@ -1,5 +1,5 @@
 # AI_portfolio_manager
-# AI Portfolio Manager 🧠📊
+# AI Portfolio Manager 
 
 An **agentic AI tool** that helps users build a personalized stock portfolio, analyze associated sentiment, and explore company fundamentals—all powered by live web scraping, language models, and a RAG pipeline.
 
@@ -7,13 +7,13 @@ This project simulates the workflow of a retail quant analyst using open-access 
 
 ---
 
-## 🧩 System Overview
+##  System Overview
 
 The AI Portfolio Manager is structured around **three independent pipelines**:
 
 ---
 
-### 1️⃣ Portfolio Developer 📈
+### 1️⃣ Portfolio Developer 
 
 Helps the user **build a stock portfolio** based on inputs like:
 
@@ -36,7 +36,7 @@ Helps the user **build a stock portfolio** based on inputs like:
 
 ---
 
-### 2️⃣ Sentiment Analyzer 📰
+### 2️⃣ Sentiment Analyzer 
 
 Scans financial news sites for **sentiment signals** about the user’s portfolio.
 
@@ -48,7 +48,7 @@ Scans financial news sites for **sentiment signals** about the user’s portfoli
 
 ---
 
-### 3️⃣ RAG-Based Document Research 📚
+### 3️⃣ RAG-Based Document Research 
 
 Allows users to **ask questions about companies** based on scraped research PDFs.
 
@@ -64,17 +64,17 @@ Current Limitations:
 
 ---
 
-## ⚠️ Known Hiccups
+## Known Hiccups
 
-- ⌛ **Slow execution** (~8 min/request) due to live scraping
-- 💸 No paid APIs used (pure scraping), so data quality can vary
-- 🧠 LLMs are fast but not deeply fine-tuned for finance
-- 🧱 Vector store retrieval (RAG) is unstable—needs better infrastructure
-- 🧾 PDF parsing sometimes misses tables and footnotes
+- **Slow execution** (~8 min/request) due to live scraping
+-  No paid APIs used (pure scraping), so data quality can vary
+-  LLMs are fast but not deeply fine-tuned for finance
+- Vector store retrieval (RAG) is unstable—needs better infrastructure
+-  PDF parsing sometimes misses tables and footnotes
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - Use **static data** for highly liquid stocks (e.g. Nifty50) with slow-changing ratios
 - Replace `chromadb` with FAISS or Weaviate for stable RAG
@@ -85,4 +85,17 @@ Current Limitations:
 ---
 
 ## 📁 Project Structure
+ai-portfolio-manager/
+├── app.py # Streamlit interface
+├── portfolio_builder.py # Core logic for stock filtering & weights
+├── sentiment_analyzer.py # Scrapes & classifies news sentiment
+├── rag_pipeline.py # RAG PDF scraping + vector search
+└── README.md
 
+##  Tech Stack
+
+- Python, Streamlit
+- LangChain + ChromaDB
+- BeautifulSoup, pdfplumber
+-  Local LLMs(llama3.2)
+- CSV
